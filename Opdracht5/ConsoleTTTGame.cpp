@@ -43,18 +43,6 @@ void ConsoleTTTGame::play() {
 void ConsoleTTTGame::printBoard() const {
 	string streep(9, '-');
 	cout << streep << endl;
-	/*for (int board = 1; board < 10; board++){
-		for (int row = 0; row < 3; ++row) {
-			for (int column = 0; column < 3; ++column)
-				if (t.side(row, column, board) == SuperTTT::COMPUTER)
-					cout << computerSymbol;
-				else if (t.side(row, column, board) == SuperTTT::HUMAN)
-					cout << humanSymbol;
-				else
-					cout << ' ';
-			cout << endl;
-		}
-	}*/
 	for (int row = 0; row < 9; row++){
 		if (row < 3){
 			for (int board = 1; board <= 3; board++){
@@ -72,9 +60,9 @@ void ConsoleTTTGame::printBoard() const {
 		else if (row < 6){
 			for (int board = 4; board <= 6; board++){
 				for (int column = 0; column < 3; column++){
-					if (t.side(row, column, board) == SuperTTT::COMPUTER)
+					if (t.side(row-3, column, board) == SuperTTT::COMPUTER)
 						cout << computerSymbol;
-					else if (t.side(row, column, board) == SuperTTT::HUMAN)
+					else if (t.side(row-3, column, board) == SuperTTT::HUMAN)
 						cout << humanSymbol;
 					else
 						cout << 'H';
@@ -85,9 +73,9 @@ void ConsoleTTTGame::printBoard() const {
 		else {
 			for (int board = 7; board <= 9; board++){
 				for (int column = 0; column < 3; column++){
-					if (t.side(row, column, board) == SuperTTT::COMPUTER)
+					if (t.side(row-6, column, board) == SuperTTT::COMPUTER)
 						cout << computerSymbol;
-					else if (t.side(row, column, board) == SuperTTT::HUMAN)
+					else if (t.side(row-6, column, board) == SuperTTT::HUMAN)
 						cout << humanSymbol;
 					else
 						cout << 'I';
